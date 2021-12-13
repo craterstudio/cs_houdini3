@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="crater_shelf" label="Crater">
+    <memberTool name="crater_playblast"/>
+    <memberTool name="flipb_on_farm0"/>
+    <memberTool name="sg_incremental_save"/>
+  </toolshelf>
+
+  <tool name="flipb_on_farm0" label="flipb on farm" icon="flipbookOnFarm.png">
+    <script scriptType="python"><![CDATA[import os
+
+COMMON_CONFIG_ROOT = os.environ["COMMON_CONFIG_ROOT"]
+HOUDINI_CONFIG_ROOT = os.environ["HOUDINI_CONFIG_ROOT"]
+
+execfile(os.path.join(HOUDINI_CONFIG_ROOT, "scripts", "playblast_over_deadline_submission.py"))
+]]></script>
+  </tool>
+
+  <tool name="crater_playblast" label="CR_playblast" icon="doPlayBlastAndSave.bmp">
+    <script scriptType="python"><![CDATA[import os
+
+COMMON_CONFIG_ROOT = os.environ["COMMON_CONFIG_ROOT"]
+HOUDINI_CONFIG_ROOT = os.environ["HOUDINI_CONFIG_ROOT"]
+
+execfile(os.path.join(COMMON_CONFIG_ROOT, "pipeline", "legacy_pipeline", "pipeline_tools.py"))
+scene_root=Scene_root()
+execfile(os.path.join(COMMON_CONFIG_ROOT, "pipeline", "legacy_pipeline", "playblast_tool.py"))
+playblastCrater_WIN()]]></script>
+  </tool>
+
+  <tool name="sg_incremental_save" label="Incremental Save" icon="incremental_save.png">
+    <script scriptType="python"><![CDATA[import os
+SHOTGUN_PIPELINE_ACTIVE = os.environ.get("SHOTGUN_PIPELINE_ACTIVE", "0")
+if SHOTGUN_PIPELINE_ACTIVE == "1":
+    try:
+        import sgtk
+        app = sgtk.platform.current_engine().apps.get("tk-cs-multi-incrementalsave")
+        app.incremental_save()
+    except Exception as err:
+        print(err.message)
+else:
+    try:
+        from produtils import ak_incremental_save
+        reload(ak_incremental_save)
+        ak_incremental_save.incremental_save()
+    except Exception as err:
+        print(err.message)
+]]></script>
+  </tool>
+
+</shelfDocument>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Please see ExampleMenu.xml for examples that customise the main menu -->
+<!-- Please see menu.xsd for the menu validation schema. -->
+<mainMenu>
+
+  <addScriptItem id="h.deadline_review_item">
+	<parent>render_menu</parent>
+	<label>Render Review Item With Deadline</label>
+	<scriptCode><![CDATA[
+import os
+import DeadlineHoudiniClient
+reload(DeadlineHoudiniClient)
+os.environ["HOUDINI_CREATE_SG_REVIEW_ITEM"] = "1"
+DeadlineHoudiniClient.main()
+os.environ["HOUDINI_CREATE_SG_REVIEW_ITEM"] = "0"
+]]>
+	</scriptCode>
+	<insertAfter/>
+  </addScriptItem>
+
+  <addScriptItem id="h.deadline">
+	<parent>render_menu</parent>
+	<label>Submit To Deadline</label>
+	<scriptCode><![CDATA[
+import DeadlineHoudiniClient
+reload(DeadlineHoudiniClient)
+DeadlineHoudiniClient.main()
+]]>
+	</scriptCode>
+	<insertAfter/>
+  </addScriptItem>
+
+</mainMenu>

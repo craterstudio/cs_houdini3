@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="rck_jan_shelf" label="RCK_YAN_shelf" icon="PLASMA_App">
+    <memberTool name="RCK_load_previs"/>
+    <memberTool name="CR_ocean_spectrum"/>
+    <memberTool name="CR_ocean_spectrum_tile"/>
+    <memberTool name="CR_ocean_ldev"/>
+    <memberTool name="CR_ocean_tile_ldev"/>
+    <memberTool name="RCK_ship_rig"/>
+    <memberTool name="RCK_yacht_rig"/>
+    <memberTool name="RCK_ship_ldev"/>
+    <memberTool name="RCK_publish_scene"/>
+    <memberTool name="RCK_ldev_load"/>
+  </toolshelf>
+
+  <tool name="RCK_load_previs" label="previs">
+    <script scriptType="python"><![CDATA[
+try:
+    import rck_previs
+    reload(rck_previs)
+    rck_previs.main()
+except Exception as err:
+    print("ERROR: {}".format(err))
+    ]]></script>
+  </tool>
+
+  <tool name="CR_ocean_spectrum" label="spectrum" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/HDA/CR_ocean_spectrum.hda")
+root=hou.node("/obj")
+root.createNode("cr_ocean_spectrum")
+    ]]></script>
+  </tool>
+
+  <tool name="CR_ocean_spectrum_tile" label="spectrum_tile" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/HDA/CR_ocean_spectrum_tile.hda")
+root=hou.node("/obj")
+root.createNode("CR_ocean_spectrum_tile")
+    ]]></script>
+  </tool>
+
+  <tool name="CR_ocean_ldev" label="ocean_ldev" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/HDA/CR_ocean_ldev.hda")
+root=hou.node("/obj")
+root.createNode("cr_ocean_ldev")
+    ]]></script>
+  </tool>
+
+  <tool name="CR_ocean_tile_ldev" label="ocean_tile_ldev" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/HDA/CR_ocean_tile_ldev.hda")
+root=hou.node("/obj")
+root.createNode("cr_ocean_tile_ldev")
+  ]]></script>
+  </tool>
+
+  <tool name="RCK_ship_rig" label="ship_rig" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/Prop/boat/RIG/work/houdini/hda/RCK_ship_rig.hda")
+root=hou.node("/obj")
+root.createNode("RCK_ship_rig")
+    ]]></script>
+  </tool>
+
+  <tool name="RCK_yacht_rig" label="yacht_rig" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/Prop/yacht/RIG/work/houdini/hda/RCK_yacht_rig.hda")
+root=hou.node("/obj")
+root.createNode("rck_yacht_rig")
+    ]]></script>
+  </tool>
+
+  <tool name="RCK_ship_ldev" label="ship_ldev" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+import hou
+hou.hda.installFile("S:/PRODUCTIONS/RCK_JAN/assets/Prop/boat/LDV/work/houdini/hda/RCK_ship_ldev.hda")
+root=hou.node("/obj")
+root.createNode("RCK_ship_ldev")
+    ]]></script>
+  </tool>
+
+    
+  <tool name="RCK_publish_scene" label="publish_scene" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+try:
+    import rck_publish_scene
+    reload(rck_publish_scene)
+    rck_publish_scene.main()
+except Exception as err:
+    print("ERROR: {}".format(err))
+    ]]></script>
+  </tool>
+
+  <tool name="RCK_ldev_load" label="ldev_load" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[
+try:
+    import rck_ldev_load
+    reload(rck_ldev_load)
+    rck_ldev_load.main()
+except Exception as err:
+    print("ERROR: {}".format(err))
+    ]]></script>
+  </tool>
+
+</shelfDocument>
