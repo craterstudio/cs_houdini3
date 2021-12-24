@@ -1,5 +1,4 @@
-playblast_over_deadline_submission.py
+Run scripts after Houdini start
 -------------------------------------
 
-- make a flipbook on a deadline client machine
-- make use of custom configuration, part of CrCustomHoudinifxScript plugin
+- also some other scripts
