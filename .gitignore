@@ -140,3 +140,6 @@ venv.bak/
 
 #otl backups
 backup/
+
+# Editor Vim
+*.swp
