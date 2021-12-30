@@ -10,7 +10,9 @@ def do_render(frm,to,inputscript,out):
     rnode.render(frame_range=(frm,to))
 
 def main():
-    # run for main
+    '''
+        run for main
+    '''
     parser=OptionParser()
     debug=True
 
@@ -23,7 +25,7 @@ def main():
 
     debug and print(options)
 
-    do_render(options.frm,options.to,options.input,options.output)
+    do_render(options.frm,options.to,options.inputscript,options.output)
 
     sys.exit(0)
 
