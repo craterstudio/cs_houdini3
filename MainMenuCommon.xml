@@ -6,6 +6,21 @@
     <menuBar>
         <subMenu id="crater_menu">
             <label>Crater</label>
+            <subMenu id="cr_render_submenu">
+                <label>Render</label>
+                <scriptItem id="py_ak_houdini_create_default_aovs">
+                    <label>Create default aovs</label>
+                    <scriptCode><![CDATA[
+                        print("py default aovs")
+                    ]]></scriptCode>
+                </scriptItem>
+                <scriptItem id="py_ak_houdini_create_additional_aovs">
+                    <label>Create additional aovs</label>
+                    <scriptCode><![CDATA[
+                        print("py additional aovs")
+                    ]]></scriptCode>
+                </scriptItem>
+            </subMenu>
         </subMenu>
     </menuBar>
 </mainMenu>
