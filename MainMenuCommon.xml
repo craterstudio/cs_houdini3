@@ -11,13 +11,13 @@
                 <scriptItem id="py_ak_houdini_create_default_aovs">
                     <label>Create default aovs</label>
                     <scriptCode><![CDATA[
-                        print("py default aovs")
+print("py default aovs")
                     ]]></scriptCode>
                 </scriptItem>
                 <scriptItem id="py_ak_houdini_create_additional_aovs">
                     <label>Create additional aovs</label>
                     <scriptCode><![CDATA[
-                        print("py additional aovs")
+print("py additional aovs")
                     ]]></scriptCode>
                 </scriptItem>
             </subMenu>
