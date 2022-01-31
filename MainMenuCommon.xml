@@ -3,11 +3,9 @@
 <!-- Please see ExampleMenu.xml for examples that customise the main menu -->
 <!-- Please see menu.xsd for the menu validation schema. -->
 <mainMenu>
-  <addScriptItem id="h.deadline">
-	<parent>render_menu</parent>
-	<label>Submit To Deadline</label>
-	<scriptPath>Q:/resources/houdini/templates/Houdiniclt/Client/DeadlineHoudiniClient.py</scriptPath>
-	<scriptArgs></scriptArgs>
-	<insertAfter/>
-  </addScriptItem>
+    <menuBar>
+        <subMenu id="crater_menu">
+            <label>Crater</label>
+        </subMenu>
+    </menuBar>
 </mainMenu>
