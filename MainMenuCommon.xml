@@ -18,6 +18,16 @@ py_ak_htoa_prepare_separate_aovs.main()
 print("py htoa separate aovs")
                         ]]></scriptCode>
                     </scriptItem>
+                    <scriptItem id="py_create_light_aims">
+                        <label>Create light aims</label>
+                        <scriptCode><![CDATA[
+import importlib
+import py_cr_light_tools
+importlib.reload(py_cr_light_tools)
+py_cr_light_tools.create_aims(20)
+print("py cr light tools")
+                        ]]></scriptCode>
+                    </scriptItem>
             </subMenu>
             <subMenu id="cr_render_submenu">
                 <label>Render</label>
