@@ -352,7 +352,7 @@ def create_arnold_aovs(node, additional=False):
     if node_type == "arnold":
         import py_ak_htoa_prepare_separate_aovs
         importlib.reload(py_ak_htoa_prepare_separate_aovs)
-        ak_htoa_prepare_separate_aovs.main(nodes=[node])
+        py_ak_htoa_prepare_separate_aovs.main(nodes=[node])
 
 
 # ------------------------------------------------------------------------------
