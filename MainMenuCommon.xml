@@ -13,8 +13,8 @@
                     <scriptCode><![CDATA[
 import importlib
 from py_ak_houdini_create_aovs import *
-importlib.reload(py_ak_houdini_create_dovs)
-py_ak_houdini_create_dovs.main()
+importlib.reload(py_ak_houdini_create_aovs)
+py_ak_houdini_create_aovs.main()
 print("py default aovs")
                     ]]></scriptCode>
                 </scriptItem>
@@ -22,9 +22,9 @@ print("py default aovs")
                     <label>Create additional aovs</label>
                     <scriptCode><![CDATA[
 import importlib
-from py_ak_houdini_create_dovs import *
-importlib.reload(py_ak_houdini_create_dovs)
-py_ak_houdini_create_dovs.main(additional=True)
+from py_ak_houdini_create_aovs import *
+importlib.reload(py_ak_houdini_create_aovs)
+py_ak_houdini_create_aovs.main(additional=True)
 print("py additional aovs")
                     ]]></scriptCode>
                 </scriptItem>
