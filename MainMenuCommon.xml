@@ -11,18 +11,18 @@
                 <scriptItem id="py_ak_houdini_create_default_aovs">
                     <label>Create default aovs</label>
                     <scriptCode><![CDATA[
-from py_ak_houdini_create_default_aovs import *
-reload(py_ak_houdini_create_default_aovs)
-py_ak_houdini_create_default_aovs.main()
+from py_ak_houdini_create_aovs import *
+reload(py_ak_houdini_create_dovs)
+py_ak_houdini_create_dovs.main()
 print("py default aovs")
                     ]]></scriptCode>
                 </scriptItem>
                 <scriptItem id="py_ak_houdini_create_additional_aovs">
                     <label>Create additional aovs</label>
                     <scriptCode><![CDATA[
-from py_ak_houdini_create_default_aovs import *
-reload(py_ak_houdini_create_default_aovs)
-py_ak_houdini_create_default_aovs.main(additional=True)
+from py_ak_houdini_create_dovs import *
+reload(py_ak_houdini_create_dovs)
+py_ak_houdini_create_dovs.main(additional=True)
 print("py additional aovs")
                     ]]></scriptCode>
                 </scriptItem>
