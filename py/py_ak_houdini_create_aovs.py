@@ -349,7 +349,7 @@ def create_arnold_aovs(node, additional=False):
 
     # if regular arnold node, call script to fill in separate AOV paths
     if node_type == "arnold":
-        from produtils import ak_htoa_prepare_separate_aovs
+        import py_ak_htoa_prepare_separate_aovs
         reload(ak_htoa_prepare_separate_aovs)
         ak_htoa_prepare_separate_aovs.main(nodes=[node])
 
