@@ -6,6 +6,19 @@
     <menuBar>
         <subMenu id="crater_menu">
             <label>Crater</label>
+            <subMenu id="cr_arnold_submenu">
+                    <label>Arnold</label>
+                    <scriptItem id="py_ak_htoa_prepare_separate_aovs">
+                        <label>Prepare separate aov paths</label>
+                        <scriptCode><![CDATA[
+import importlib
+import py_ak_htoa_prepare_separate_aovs
+importlib.reload(py_ak_htoa_prepare_separate_aovs)
+py_ak_htoa_prepare_separate_aovs.main()
+print("py htoa separate aovs")
+                        ]]></scriptCode>
+                    </scriptItem>
+            </subMenu>
             <subMenu id="cr_render_submenu">
                 <label>Render</label>
                 <scriptItem id="py_ak_houdini_create_default_aovs">
