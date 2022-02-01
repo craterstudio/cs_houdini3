@@ -12,7 +12,7 @@
                     <label>Create default aovs</label>
                     <scriptCode><![CDATA[
 import importlib
-from py_ak_houdini_create_aovs import *
+import py_ak_houdini_create_aovs 
 importlib.reload(py_ak_houdini_create_aovs)
 py_ak_houdini_create_aovs.main()
 print("py default aovs")
@@ -22,7 +22,7 @@ print("py default aovs")
                     <label>Create additional aovs</label>
                     <scriptCode><![CDATA[
 import importlib
-from py_ak_houdini_create_aovs import *
+import py_ak_houdini_create_aovs 
 importlib.reload(py_ak_houdini_create_aovs)
 py_ak_houdini_create_aovs.main(additional=True)
 print("py additional aovs")
